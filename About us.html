@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kutch Polymer - About Us</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0079CC;
+      --primary-dark: #005c99;
+      --text-dark: #333;
+      --text-light: #666;
+      --bg-light: #f5f5f5;
+      --white: #ffffff;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin-left: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      width: 100%;
+    }
+
+    .nav-menu a.active {
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      padding: 100px 0 50px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .bg-shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .bg-shape-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -50px;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .bg-shape-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -70px;
+      left: 10%;
+      animation: float 6s ease-in-out infinite reverse;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 80px 0;
+    }
+
+    /* Our Story Section */
+    .story-section {
+      margin-bottom: 60px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    /* Section title style */
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title .title-normal {
+      color: var(--text-dark);
+    }
+
+    .section-title .title-colored {
+      color: var(--primary-color);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    /* Story content styles */
+    .story-content {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 0.3s;
+    }
+
+    .story-content p {
+      margin-bottom: 20px;
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .story-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-image-container {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 0.5s;
+    }
+
+    .story-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .story-image-container:hover .story-image {
+      transform: scale(1.05);
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 80px 0;
+      background-color: var(--white);
+      margin-bottom: 60px;
+    }
+
+    .values-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .values-container .section-title {
+      display: inline-block;
+    }
+
+    .values-container .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .values-description {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: var(--text-light);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .value-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 40px 30px;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      border-bottom: 4px solid transparent;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      border-bottom: 4px solid var(--primary-color);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(0, 121, 204, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover .value-icon {
+      background-color: var(--primary-color);
+    }
+
+    .value-icon svg {
+      width: 35px;
+      height: 35px;
+      fill: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover .value-icon svg {
+      fill: var(--white);
+    }
+
+    .value-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+
+    .value-text {
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      margin-bottom: 80px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding-bottom: 80px;
+    }
+
+    .team-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .team-container .section-title {
+      display: inline-block;
+    }
+
+    .team-container .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .team-description {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: var(--text-light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-image-container {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .team-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .team-card:hover .team-image {
+      transform: scale(1.1);
+    }
+
+    .team-info {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .team-name {
+      font-size: 22px;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+
+    .team-position {
+      color: var(--primary-color);
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .team-bio {
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .team-social {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(0, 121, 204, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: var(--primary-color);
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover svg {
+      fill: var(--white);
+    }
+
+    /* Back to Home Button Styles */
+    .back-to-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px 16px;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 30px;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .back-to-home:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateX(-5px);
+    }
+
+    .back-icon {
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .back-to-home:hover .back-icon {
+      transform: translateX(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a1a;
+      color: #ccc;
+      padding: 50px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 35px;
+      margin-bottom: 35px;
+    }
+
+    .footer-column h3 {
+      color: var(--white);
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .footer-logo {
+      margin-bottom: 18px;
+      max-width: 130px;
+    }
+
+    .footer-about p {
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .value-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .value-card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .value-card:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    .team-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .team-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .stat-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .stat-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .stat-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .stat-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 992px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0 40px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .main-content {
+        padding: 50px 0;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .back-to-home {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-to-home">
+    <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+      fill="currentColor">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+    </svg>
+    Home
+  </a>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">About Kutch Polymer</h1>
+        <p class="hero-text">Innovative Polymer Solutions for a Sustainable Future</p>
+      </div>
+    </div>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+  </section>
+
+  <section class="main-content">
+    <div class="container">
+      <div class="story-section">
+        <div class="story-grid">
+          <div class="story-content">
+            <h2 class="section-title">
+              <span class="title-normal">Our</span>
+              <span class="title-colored">Story</span>
+            </h2>
+            <p>Founded in 2005, Kutch Polymer began with a simple vision: to revolutionize the piping industry with innovative polymer solutions. What started as a small manufacturing unit in the heart of Gujarat has now evolved into one of the region's most trusted providers of high-quality PVC and HDPE pipes and fittings.</p>
+            <p>Our journey has been defined by continuous innovation, unwavering commitment to quality, and a deep understanding of our customers' needs. From irrigation systems that have transformed agricultural practices to plumbing solutions that have improved water management in urban areas, our products have made a significant impact across various sectors.</p>
+            <p>Today, Kutch Polymer stands as a symbol of excellence in the polymer industry, with state-of-the-art manufacturing facilities, a diverse product portfolio, and a strong presence across India and international markets.</p>
+          </div>
+          <div class="story-image-container">
+            <img src="/api/placeholder/600/400" alt="Kutch Polymer Factory" class="story-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="values-container">
+        <h2 class="section-title">
+          <span class="title-normal">Our</span>
+          <span class="title-colored">Values</span>
+        </h2>
+        <p class="values-description">Our core values guide everything we do at Kutch Polymer, from product development to customer service. These principles have been the foundation of our success for over two decades.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z" />
+            </svg>
+          </div>
+          <h3 class="value-title">Excellence</h3>
+          <p class="value-text">We are committed to excellence in everything we do, from product design and manufacturing to customer service and support.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12.971 1.816c-3.199 0-5.851 2.41-6.216 5.527l-2.755-.401v8.329h3.611c.68.737 1.503 1.394 2.456 1.97l.448.261.448-.261c.954-.576 1.778-1.233 2.456-1.97h3.582v-8.329l-4.03.587zm5.029 9.571v-6.402l-4.964.723c.026-.125.008-.21.008-.313 0-4.041-6.834-4.714-6.834-1.081 0 .561.125 1.091.35 1.532-1.407-.959-2.631-2.634-2.585-5.215 3.688 2.26 10.115 3.099 14.025 10.756zm-9.646-6.928c0-.695 1.019-.729 1.02-.033 0 .696-1.02.729-1.02.033zm-.367 11.048c1.646 1.041 4.291 1.041 5.937 0-1.674 2.339-4.263 2.339-5.937 0zm4.4-2.507c-1.593 1.96-3.265 1.96-4.858 0-.228.276-.502.476-.68.776 1.547 1.217 4.671 1.217 6.218 0-.179-.3-.271-.496-.68-.776z" />
+            </svg>
+          </div>
+          <h3 class="value-title">Innovation</h3>
+          <p class="value-text">We continuously innovate to develop sustainable polymer solutions that address the evolving needs of our customers and the environment.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
+            </svg>
+          </div>
+          <h3 class="value-title">Integrity</h3>
+          <p class="value-text">We conduct our business with the highest ethical standards, maintaining transparency and honesty in all our relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Employees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="team-container">
+        <h2 class="section-title">
+          <span class="title-normal">Leadership</span>
+          <span class="title-colored">Team</span>
+        </h2>
+        <p class="team-description">Meet the visionaries behind Kutch Polymer. Our leadership team combines decades of industry experience with a passion for innovation.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-image-container">
+            <img src="/api/placeholder/400/400" alt="Rajesh Kutch" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Rajesh Kutch</h3>
+            <p class="team-position">Founder & Managing Director</p>
+            <p class="team-bio">With over 25 years of experience in the polymer industry, Rajesh has been the driving force behind Kutch Polymer's success. His vision and leadership have transformed a small manufacturing unit into a leading polymer solutions provider.</p>
+            <div class="team-social">
+              <a href="#" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7
