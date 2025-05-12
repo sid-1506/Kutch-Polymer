@@ -10,7 +10,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image">
 
   <!-- 
     - custom css link
@@ -25,9 +25,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -40,54 +37,7 @@
 
     <div class="overlay" data-overlay></div>
 
-    <!-- <div class="header-top">
-      <div class="container">
 
-        <ul class="header-top-list">
-
-          <li>
-            <a href="mailto:info@homeverse.com" class="header-top-link">
-              <ion-icon name="mail-outline"></ion-icon>
-
-              <span>kutchpolymer@gmail.com</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="header-top-link">
-              <ion-icon name="location-outline"></ion-icon>
-
-              <address>Sarve 322/2 Kutch Gujarat 370165</address>
-            </a>
-          </li>
-
-        </ul>
-
-        <div class="wrapper">
-          <ul class="header-top-social-list">
-
-            <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div> -->
 
     <div class="header-bottom">
       <div class="container">
@@ -118,15 +68,15 @@
               </li>
 
               <li>
-                <a href="About kutch/About.html" class="navbar-link" data-nav-link>About</a>
+                <a href="About us.html" class="navbar-link" data-nav-link>About</a>
               </li>
 
               <li>
-                <a href="#property" class="navbar-link" data-nav-link>Prodcuts</a>
+                <a href="#blog" class="navbar-link" data-nav-link>Services</a>
               </li>
 
               <li>
-                <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+                <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
               </li>
 
             </ul>
@@ -136,23 +86,26 @@
 
         <div class="header-bottom-actions">
 
-          <button class="header-bottom-actions-btn" aria-label="Search">
-            <ion-icon name="search-outline"></ion-icon>
-
-            <span>Search</span>
+          <button class="header-bottom-actions-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/people/Kutch-Polymer/61558686630039/" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <span>Facebook</span>
           </button>
 
-          <!-- <button class="header-bottom-actions-btn" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
-
-            <span>Profile</span>
+          <button class="header-bottom-actions-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/kutch_polymers/" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <span>Instagram</span>
           </button>
 
-          <button class="header-bottom-actions-btn" aria-label="Cart">
-            <ion-icon name="cart-outline"></ion-icon>
+          <button class="header-bottom-actions-btn" aria-label="Cart"> <a href="https://wa.me/919820556353?text=Hey"
+              target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
 
-            <span>Cart</span>
-          </button> -->
+
+            <span>Whatsapp</span>
+          </button>
 
           <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
             <ion-icon name="menu-outline"></ion-icon>
@@ -194,7 +147,9 @@
               PVC Pipes and Fitting | Sprinkler System | HDPE Pipe
             </p>
 
-            <button class="btn">Make An Enquiry</button>
+            <button class="btn" onclick="window.open('contact.html', '_blank')">Make An Enquiry</button>
+
+
 
           </div>
 
@@ -217,9 +172,9 @@
         <div class="container">
 
           <figure class="about-banner">
-            <!-- <img src="./assets/images/about-banner-1.png" alt="House interior">
+            <img src="./assets/images/about-banner-1.png" alt="House interior">
 
-            <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img"> -->
+            <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img">
           </figure>
 
           <div class="about-content">
@@ -229,7 +184,8 @@
             <h2 class="h2 section-title">The Piping System For Agriculture.</h2>
 
             <p class="about-text">
-              Our pipes, made from premium materials, ensure durability and reliability, meeting strict industry standards.
+              Our pipes, made from premium materials, ensure durability and reliability, meeting strict industry
+              standards.
 
 
             </p>
@@ -271,7 +227,8 @@
             </ul>
 
             <p class="callout">
-              Our pipes, made from premium materials, ensure durability and reliability, meeting strict industry standards.
+              Our pipes, made from premium materials, ensure durability and reliability, meeting strict industry
+              standards.
             </p>
 
             <!-- <a href="#service" class="btn">Our Services</a> -->
@@ -302,18 +259,19 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="assets/images/volunteer_activism_100dp_0079CC_FILL0_wght400_GRAD0_opsz48.svg" 
-                       alt="Handshake Icon" class="large-icon">
-              </div>
-              
-              
+                  <img src="assets/images/volunteer_activism_100dp_0079CC_FILL0_wght400_GRAD0_opsz48.svg"
+                    alt="Handshake Icon" class="large-icon">
+                </div>
+
+
 
                 <h3 class="h3 card-title">
                   <a href="#">Innovation</a>
                 </h3>
 
                 <p class="card-text">
-                  We develop advanced, eco-friendly piping solutions that enhance water management, ensuring sustainability and efficiency for farmers.
+                  We develop advanced, eco-friendly piping solutions that enhance water management, ensuring
+                  sustainability and efficiency for farmers.
                 </p>
 
                 <a href="#" class="card-link">
@@ -329,7 +287,8 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="assets/images/valve_100dp_0079CC_FILL0_wght400_GRAD0_opsz48.svg" alt="Service icon" class="large-icon">
+                  <img src="assets/images/valve_100dp_0079CC_FILL0_wght400_GRAD0_opsz48.svg" alt="Service icon"
+                    class="large-icon">
                 </div>
 
                 <h3 class="h3 card-title">
@@ -337,7 +296,8 @@
                 </h3>
 
                 <p class="card-text">
-                  Our diverse range of innovative and durable PVC, CPVC, and HDPE pipes, along with high-quality fittings and sprinklers, meets every agricultural need.
+                  Our diverse range of innovative and durable PVC, CPVC, and HDPE pipes, along with high-quality
+                  fittings and sprinklers, meets every agricultural need.
                 </p>
 
                 <a href="#" class="card-link">
@@ -353,7 +313,8 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="assets/images/handyman_39dp_0079CC_FILL0_wght400_GRAD0_opsz40.svg" alt="Service icon" class="large-icon">
+                  <img src="assets/images/handyman_39dp_0079CC_FILL0_wght400_GRAD0_opsz40.svg" alt="Service icon"
+                    class="large-icon">
                 </div>
 
                 <h3 class="h3 card-title">
@@ -361,7 +322,8 @@
                 </h3>
 
                 <p class="card-text">
-                  Committed to quality and reliability, we provide durable piping solutions that help farmers optimize productivity with long-lasting performance.
+                  Committed to quality and reliability, we provide durable piping solutions that help farmers optimize
+                  productivity with long-lasting performance.
                 </p>
 
                 <a href="#" class="card-link">
@@ -378,601 +340,33 @@
         </div>
       </section>
 
-
-
-
-
       <!-- 
         - #PROPERTY
-      -->
-
-      <section class="property" id="property">
-        <div class="container">
-
-          <p class="section-subtitle">Properties</p>
-
-          <h2 class="h2 section-title">Featured Listings</h2>
-
-          <ul class="property-list has-scrollbar">
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-1.jpg" alt="New Apartment Nice View" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>$34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">New Apartment Nice View</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/author.jpg" alt="William Seklo" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">William Seklo</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-2.jpg" alt="Modern Apartments" class="w-100">
-                  </a>
-
-                  <div class="card-badge orange">For Sales</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>$34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Modern Apartments</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/author.jpg" alt="William Seklo" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">William Seklo</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-3.jpg" alt="Comfortable Apartment" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>$34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Comfortable Apartment</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/author.jpg" alt="William Seklo" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">William Seklo</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-4.png" alt="Luxury villa in Rego Park" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>$34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Luxury villa in Rego Park</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/author.jpg" alt="William Seklo" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">William Seklo</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-      
-
-      <!-- 
-        - #FEATURES
-      -->
-
-      <!-- <section class="features">
-        <div class="container">
-
-          <p class="section-subtitle">Catalogue</p>
-
-          <h2 class="h2 section-title">Products</h2>
-
-          <ul class="features-list">
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="car-sport-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">C-PVC</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="water-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">U-PVC</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="shield-checkmark-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Coming Soon</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            
-
-          </ul>
-
-        </div>
-      </section> -->
-
-
-
-
-
-      <!-- 
-        - #BLOG
       -->
 
       <section class="blog" id="blog">
         <div class="container">
 
-          <p class="section-subtitle">News & Blogs</p>
+          <p class="section-subtitle">Services</p>
 
-          <h2 class="h2 section-title">Leatest News Feeds</h2>
+          <h2 class="h2 section-title">Featured Listings</h2>
 
           <ul class="blog-list has-scrollbar">
 
-            <li>
-              <div class="blog-card">
+            <a href="PRODUCTS/Categories.html">
+              <li>
+                <div class="blog-card">
 
-                <figure class="card-banner">
-                  <img src="./assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
-                </figure>
+                  <figure class="card-banner">
+                    <img src="./assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021"
+                      class="w-100">
+                  </figure>
 
-                <div class="blog-content">
+                  <div class="blog-content">
 
-                  <div class="blog-content-top">
+                    <div class="blog-content-top">
 
-                    <ul class="card-meta-list">
+                      <!-- <ul class="card-meta-list">
 
                       <li>
                         <a href="#" class="card-meta-link">
@@ -990,28 +384,29 @@
                         </a>
                       </li>
 
-                    </ul>
+                    </ul> -->
 
-                    <h3 class="h3 blog-title">
-                      <a href="#">Raghu Patni</a>
-                    </h3>
+                      <h3 class="h3 blog-title">
+                        <a href="PRODUCTS/Categories.html">AGRICULTURAL</a>
+                      </h3>
 
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-04">Agriculture and all handleing</time>
                     </div>
 
-                    <a href="#" class="read-more-btn">Read More</a>
+                    <div class="blog-content-bottom">
+                      <div class="publish-date">
+                        <ion-icon name="pricetags"></ion-icon>
+
+                        <time datetime="2022-27-04">Agriculture and all handleing</time>
+                      </div>
+
+                      <a href="#" class="read-more-btn">View Products</a>
+                    </div>
+
                   </div>
 
                 </div>
-
-              </div>
-            </li>
+              </li>
+            </a>
 
             <li>
               <div class="blog-card">
@@ -1024,7 +419,7 @@
 
                   <div class="blog-content-top">
 
-                    <ul class="card-meta-list">
+                    <!-- <ul class="card-meta-list">
 
                       <li>
                         <a href="#" class="card-meta-link">
@@ -1042,19 +437,19 @@
                         </a>
                       </li>
 
-                    </ul>
+                    </ul> -->
 
                     <h3 class="h3 blog-title">
-                      <a href="#">Recent Commercial Real Estate Transactions</a>
+                      <a href="#">PLUMBING</a>
                     </h3>
 
                   </div>
 
                   <div class="blog-content-bottom">
                     <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
+                      <ion-icon name="pricetags"></ion-icon>
 
-                      <time datetime="2022-27-04">Apr 27, 2022</time>
+                      <time datetime="2022-27-04">Plumbing pipes</time>
                     </div>
 
                     <a href="#" class="read-more-btn">Read More</a>
@@ -1065,58 +460,7 @@
               </div>
             </li>
 
-            <li>
-              <div class="blog-card">
 
-                <figure class="card-banner">
-                  <img src="./assets/images/blog-3.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
-                    class="w-100">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Room</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">Renovating a Living Room? Experts Share Their Secrets</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-04">Apr 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
 
           </ul>
 
@@ -1141,14 +485,13 @@
               <p class="card-text">Providing high-quality polymer pipes and fittings for every need.</p>
             </div>
 
-            <button class="btn cta-btn">
-              <span>Explore Products</span>
-
+            <button class="btn cta-btn" onclick="window.location.href='contact.html'">
+              <span>Contact Us</span>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </button>
-          </div>
 
-        </div>
+
+          </div>
       </section>
 
     </article>
@@ -1171,17 +514,17 @@
 
           <a href="#" class="logo">
             <img src="Favicon.svg" alt="Kutch Polymer Logo" width="120" height="auto">
-        </a>
-        <br>
+          </a>
+          <br>
 
-          <!-- <p class="section-text">
-            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
-          </p> -->
+          <p class="section-text">
+            Our pipes, made from premium materials, ensure durability and reliability, meeting strict industry standards.
+          </p>
 
           <ul class="contact-list">
 
             <li>
-              <a href="#" class="contact-link">
+              <a href="https://maps.app.goo.gl/S9nbuCD2TCiTTg687" class="contact-link">
                 <ion-icon name="location-outline"></ion-icon>
 
                 <address>SARVE 322/2 KUTCH GUJARAT</address>
@@ -1189,10 +532,10 @@
             </li>
 
             <li>
-              <a href="tel:+0123456789" class="contact-link">
+              <a href="tel:+919920375375" class="contact-link">
                 <ion-icon name="call-outline"></ion-icon>
 
-                <span>+91 99203-75375</span>
+                <span>+919920375375</span>
               </a>
             </li>
 
@@ -1209,26 +552,26 @@
           <ul class="social-list">
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.facebook.com/people/Kutch-Polymer/61558686630039/" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://wa.me/919820556353?text=Hey" class="social-link">
+                <ion-icon name="logo-whatsapp"></ion-icon>
               </a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
-            </li>
+            </li> -->
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
+              <a href="https://www.instagram.com/kutch_polymers/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
@@ -1236,7 +579,7 @@
 
         </div>
 
-        <div class="footer-link-box">
+        <!-- <div class="footer-link-box">
 
           <ul class="footer-list">
 
@@ -1268,75 +611,75 @@
               <a href="#" class="footer-link">Contact us</a>
             </li>
 
-          </ul>
+          </ul> -->
 
-          <ul class="footer-list">
+        <ul class="footer-list">
 
-            <li>
-              <p class="footer-list-title">Services</p>
-            </li>
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Order tracking</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Order tracking</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Wish List</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Wish List</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Login</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Login</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">My account</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">My account</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Terms & Conditions</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Promotional Offers</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Promotional Offers</a>
+          </li>
 
-          </ul>
+        </ul>
 
-          <ul class="footer-list">
+        <ul class="footer-list">
 
-            <li>
-              <p class="footer-list-title">Customer Care</p>
-            </li>
+          <li>
+            <p class="footer-list-title">Customer Care</p>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Login</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Login</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">My account</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">My account</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Wish List</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Wish List</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Order tracking</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Order tracking</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">FAQ</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">FAQ</a>
+          </li>
 
-            <li>
-              <a href="#" class="footer-link">Contact us</a>
-            </li>
+          <li>
+            <a href="#" class="footer-link">Contact us</a>
+          </li>
 
-          </ul>
-
-        </div>
+        </ul>
 
       </div>
+
+    </div>
     </div>
 
     <div class="footer-bottom">
@@ -1350,10 +693,6 @@
     </div>
 
   </footer>
-
-
-
-
 
   <!-- 
     - custom js link
