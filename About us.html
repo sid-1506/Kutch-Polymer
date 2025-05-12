@@ -1185,6 +1185,262 @@
         }
       });
     });
+
+    // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Page opening animation
+  animatePageOpening();
+  
+  // Setup scroll animations
+  setupScrollAnimations();
+  
+  // Highlight active nav item
+  highlightActiveNavItem();
+});
+
+// Function to handle the page opening animation
+function animatePageOpening() {
+  // Fade in the body with a smooth transition
+  document.body.style.opacity = 0;
+  document.body.style.transition = 'opacity 1.2s ease';
+  
+  setTimeout(() => {
+    document.body.style.opacity = 1;
+  }, 100);
+  
+  // Animate the hero content with a slight delay
+  setTimeout(() => {
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+      heroContent.style.opacity = 1;
+      heroContent.style.transform = 'translateY(0)';
+    }
+  }, 400);
+}
+
+// Setup for scroll-based animations
+function setupScrollAnimations() {
+  // Stats counter animation
+  setupStatsCounter();
+  
+  // Animate elements when they come into view
+  setupScrollReveal();
+}
+
+// Function to animate the stats counter when scrolled into view
+function setupStatsCounter() {
+  const statsSection = document.querySelector('.stats-section');
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  // Store the target numbers
+  const targetNumbers = Array.from(statNumbers).map(stat => {
+    const value = stat.textContent.replace(/[^0-9]/g, '');
+    return parseInt(value, 10);
+  });
+  
+  // Reset the numbers to 0
+  statNumbers.forEach(stat => {
+    stat.textContent = '0';
+  });
+  
+  // Set up the Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Start the counter animation for each stat
+        statNumbers.forEach((stat, index) => {
+          animateCounter(stat, 0, targetNumbers[index], 2000);
+        });
+        
+        // Unobserve after animation starts
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  // Start observing the stats section
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+}
+
+// Function to animate counting from start to end
+function animateCounter(element, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    let value = Math.floor(progress * (end - start) + start);
+    
+    // Add the '+' symbol back if it was there originally
+    element.textContent = value + (element.textContent.includes('+') ? '+' : '');
+    
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      element.textContent = end + (element.textContent.includes('+') ? '+' : '');
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+// Function to reveal elements when scrolled into view
+function setupScrollReveal() {
+  const sections = document.querySelectorAll('.story-section, .values-section, .sustainability-section, .team-section');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        
+        // Add a subtle scale animation to the section
+        entry.target.style.transform = 'scale(0.98)';
+        entry.target.style.opacity = '0';
+        
+        setTimeout(() => {
+          entry.target.style.transition = 'all 0.8s ease-out';
+          entry.target.style.transform = 'scale(1)';
+          entry.target.style.opacity = '1';
+        }, 100);
+        
+        // Unobserve after animation
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  sections.forEach(section => {
+    revealObserver.observe(section);
+  });
+  
+  // Animate feature items individually
+  const featureItems = document.querySelectorAll('.feature-item');
+  
+  const featureObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Staggered animation for features
+        setTimeout(() => {
+          entry.target.style.transition = 'all 0.6s ease-out';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+        }, index * 200);
+        
+        featureObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  featureItems.forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-20px)';
+    featureObserver.observe(item);
+  });
+  
+  // Animate value cards with a bounce effect
+  const valueCards = document.querySelectorAll('.value-card');
+  
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 150);
+        
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  valueCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    cardObserver.observe(card);
+  });
+}
+
+// Highlight active navigation item
+function highlightActiveNavItem() {
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.nav-menu a');
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Add a subtle parallax effect to the hero section
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const heroSection = document.querySelector('.hero');
+  
+  if (heroSection) {
+    const bgShapes = heroSection.querySelectorAll('.bg-shape');
+    
+    bgShapes.forEach((shape, index) => {
+      // Different parallax speeds for each shape
+      const speed = index === 0 ? 0.2 : 0.1;
+      shape.style.transform = `translateY(${scrollPosition * speed}px)`;
+    });
+  }
+});
+
+// Optional: Add a smooth scroll to top button
+function addScrollToTopButton() {
+  // Create the button
+  const scrollTopBtn = document.createElement('button');
+  scrollTopBtn.innerHTML = '↑';
+  scrollTopBtn.className = 'scroll-top-btn';
+  
+  // Style the button
+  scrollTopBtn.style.position = 'fixed';
+  scrollTopBtn.style.bottom = '20px';
+  scrollTopBtn.style.right = '20px';
+  scrollTopBtn.style.width = '40px';
+  scrollTopBtn.style.height = '40px';
+  scrollTopBtn.style.borderRadius = '50%';
+  scrollTopBtn.style.backgroundColor = 'var(--primary-color)';
+  scrollTopBtn.style.color = 'white';
+  scrollTopBtn.style.border = 'none';
+  scrollTopBtn.style.cursor = 'pointer';
+  scrollTopBtn.style.display = 'none';
+  scrollTopBtn.style.opacity = '0';
+  scrollTopBtn.style.transition = 'opacity 0.3s ease';
+  scrollTopBtn.style.fontSize = '20px';
+  
+  document.body.appendChild(scrollTopBtn);
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollTopBtn.style.display = 'block';
+      setTimeout(() => {
+        scrollTopBtn.style.opacity = '1';
+      }, 100);
+    } else {
+      scrollTopBtn.style.opacity = '0';
+      setTimeout(() => {
+        scrollTopBtn.style.display = 'none';
+      }, 300);
+    }
+  });
+  
+  // Scroll to top when clicked
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Initialize the scroll to top button (optional)
+// addScrollToTopButton();
   </script>
 </body>
 
